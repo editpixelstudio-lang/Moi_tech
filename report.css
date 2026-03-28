@@ -1,0 +1,341 @@
+/* Collection Report Layout */
+:root {
+    --report-bg: #eef2f7;
+    --card-bg: #ffffff;
+    --ink: #0f172a;
+    --accent: #5b21b6;
+    --muted: #6b7280;
+    --border: #d8dee9;
+    --table-header: #111827;
+    --table-stripe: #f8fafc;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body.report-body {
+    margin: 0;
+    padding: 32px;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background: var(--report-bg);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.report-shell {
+    max-width: 960px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    padding: 32px;
+    border-radius: 18px;
+    box-shadow: 0 30px 80px rgba(15, 23, 42, 0.15);
+}
+
+.report-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.toolbar-link {
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.toolbar-btn {
+    border: none;
+    background: var(--accent);
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.toolbar-btn:hover {
+    opacity: 0.9;
+}
+
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.report-eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 12px;
+    color: var(--muted);
+    margin: 0 0 8px 0;
+}
+
+.report-header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.report-meta {
+    color: var(--muted);
+    margin: 8px 0 0 0;
+    font-weight: 500;
+}
+
+.report-badge {
+    background: #f5f3ff;
+    border-radius: 16px;
+    padding: 16px 20px;
+    text-align: right;
+    min-width: 220px;
+}
+
+.report-badge span {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.report-badge strong {
+    display: block;
+    font-size: 20px;
+    color: var(--accent);
+}
+
+.report-badge small {
+    color: var(--muted);
+}
+
+.function-notes {
+    border: 1px dashed var(--border);
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    background: #fcfaff;
+}
+
+.function-notes h2 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.report-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.report-summary article {
+    background: #f8fafc;
+    border-radius: 14px;
+    padding: 16px;
+    border: 1px solid var(--border);
+}
+
+.report-summary p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.report-summary h3 {
+    margin: 10px 0 4px 0;
+    font-size: 24px;
+}
+
+.report-summary span {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.empty-report {
+    border-radius: 16px;
+    padding: 60px;
+    text-align: center;
+    background: #fff7eb;
+    color: #92400e;
+    border: 1px solid #fcd9bd;
+}
+
+.report-index {
+    margin-bottom: 40px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+    margin: 0;
+}
+
+.section-heading .hint {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.report-index table,
+.location-block table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.report-index th,
+.report-index td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.report-index thead th {
+    background: #1e293b;
+    color: #fff;
+    font-weight: 600;
+}
+
+.report-index tbody tr:nth-child(even) {
+    background: var(--table-stripe);
+}
+
+.index-link {
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.page-no span::after {
+    content: attr(data-fallback);
+}
+
+/* Each location section mimics a chapter spread */
+.location-block {
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 28px;
+    background: linear-gradient(145deg, #ffffff 60%, #f8fafc 100%);
+    page-break-inside: avoid;
+}
+
+.location-block header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.location-block .eyebrow {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.location-block h3 {
+    margin: 4px 0 0 0;
+    font-size: 24px;
+}
+
+.location-block .totals {
+    text-align: right;
+    font-weight: 600;
+}
+
+.location-block .totals strong {
+    font-size: 20px;
+    color: var(--accent);
+    display: block;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.location-block th,
+.location-block td {
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+}
+
+.location-block thead th {
+    background: #0f172a;
+    color: #fff;
+    position: sticky;
+    top: 0;
+}
+
+.location-block tbody tr:nth-child(even) {
+    background: var(--table-stripe);
+}
+
+.location-block td.amount {
+    font-weight: 700;
+    color: #047857;
+    text-align: right;
+}
+
+@page {
+    size: A4;
+    margin: 18mm 15mm 20mm 15mm;
+}
+
+@media print {
+    body.report-body {
+        background: #fff;
+        padding: 0;
+    }
+
+    .report-shell {
+        padding: 24mm 18mm;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .report-toolbar {
+        display: none;
+    }
+
+    .report-index {
+        page-break-after: always;
+    }
+
+    .location-block {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    /* Resolve exact page number via paged-media counters */
+    .page-no span::after {
+        content: target-counter(attr(data-target url), page);
+        font-variant-numeric: tabular-nums;
+        color: #111;
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 768px) {
+    body.report-body {
+        padding: 16px;
+    }
+
+    .report-shell {
+        padding: 20px;
+    }
+
+    .report-header {
+        flex-direction: column;
+    }
+}

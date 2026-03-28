@@ -1,0 +1,519 @@
+/**
+ * Receipt Styling - Detailed Invoice/Receipt Layout
+ * UZRS MOI Collection System
+ */
+
+/* Receipt Container - 3 inch thermal printer (80mm) */
+.receipt-container {
+    max-width: 76mm;
+    width: 76mm;
+    margin: 0 auto;
+    background: white;
+    padding: 5mm;
+    font-family: 'Arial', 'Noto Sans Tamil', sans-serif;
+    font-size: 11px;
+    line-height: 1.4;
+    color: #000;
+    border: 1px solid #ddd;
+}
+
+/* Receipt Header */
+.receipt-header {
+    text-align: center;
+    border-bottom: 2px dashed #333;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+}
+
+.receipt-header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.receipt-header-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.receipt-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.receipt-logo-img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.receipt-shop-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 4px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.receipt-shop-phone {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 3px 0;
+}
+
+/* Customer Details Section */
+.receipt-customer {
+    margin: 15px 0;
+    padding: 10px 0;
+    border-bottom: 1px dashed #666;
+}
+
+.receipt-customer-row {
+    display: flex;
+    margin: 5px 0;
+    font-size: 13px;
+}
+
+.receipt-customer-label {
+    min-width: 60px;
+    font-weight: normal;
+}
+
+.receipt-customer-value {
+    flex: 1;
+    font-weight: normal;
+}
+
+/* Bill Info */
+.receipt-bill-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    padding: 5px 0;
+    font-size: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.receipt-bill-no {
+    font-weight: bold;
+}
+
+.receipt-bill-date {
+    font-weight: bold;
+}
+
+/* Items Table */
+.receipt-items {
+    margin: 15px 0;
+}
+
+.receipt-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dotted #999;
+}
+
+.receipt-item-name {
+    flex: 1;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.receipt-item-amount {
+    min-width: 90px;
+    text-align: right;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Totals Section */
+.receipt-totals {
+    margin: 8px 0;
+    padding: 5px 0;
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+}
+
+.receipt-total-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    font-size: 12px;
+}
+
+.receipt-total-label {
+    font-weight: bold;
+}
+
+.receipt-total-value {
+    font-weight: bold;
+    min-width: 120px;
+    text-align: right;
+    font-size: 13px;
+}
+
+.receipt-grand-total {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #333;
+}
+
+/* Denomination Details */
+.receipt-denominations {
+    margin: 15px 0;
+    padding: 10px 0;
+    border-top: 1px dashed #666;
+}
+
+.receipt-denom-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.receipt-denom-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    font-size: 13px;
+}
+
+.receipt-denom-label {
+    font-weight: normal;
+}
+
+.receipt-denom-value {
+    font-weight: normal;
+}
+
+/* Payment Summary */
+.receipt-payment-summary {
+    margin: 15px 0;
+    padding: 10px 0;
+    border-top: 2px dashed #333;
+}
+
+.receipt-payment-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    font-size: 13px;
+}
+
+.receipt-payment-label {
+    font-weight: normal;
+}
+
+.receipt-payment-value {
+    font-weight: bold;
+}
+
+.receipt-balance-row {
+    color: #d32f2f;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Footer */
+.receipt-footer {
+    text-align: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px dashed #333;
+}
+
+.receipt-thank-you {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 8px 0;
+}
+
+.receipt-contact {
+    font-size: 10px;
+    color: #000;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.receipt-timestamp {
+    font-size: 9px;
+    color: #999;
+    margin-top: 5px;
+}
+
+/* Print Styles - 3 inch thermal printer */
+@media print {
+    @page {
+        size: 80mm auto; /* 3 inch paper - auto height to fit content */
+        margin: 0;
+    }
+    
+    html, body {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        background: white;
+    }
+    
+    /* Hide everything by default */
+    body > * {
+        display: none !important;
+    }
+    
+    /* Show only the invoice modal */
+    #invoiceModal {
+        display: block !important;
+        position: static;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        background: white;
+        visibility: visible !important;
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+
+    #invoiceModal * {
+        visibility: visible !important;
+    }
+    
+    .modal-box {
+        box-shadow: none !important;
+        border: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: static !important;
+        transform: none !important;
+        background: white !important;
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+    
+    .modal-header,
+    .modal-footer,
+    .modal-close {
+        display: none !important;
+    }
+    
+    .modal-body {
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: visible !important;
+        max-height: none !important;
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+    
+    .receipt-container {
+        width: 100% !important;
+        max-width: 76mm !important; /* Enforce width */
+        border: none;
+        padding: 0 !important;
+        margin: 0 auto !important;
+        font-size: 11px;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        page-break-after: avoid;
+        page-break-inside: avoid;
+        height: auto;
+    }
+    
+    /* Ensure single page printing */
+    .given-copy,
+    .counter-copy {
+        page-break-after: auto;
+        page-break-inside: avoid;
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    
+    .receipt-entry-details {
+        font-size: 9px;
+        page-break-inside: avoid;
+    }
+    
+    .receipt-entry-details th,
+    .receipt-entry-details td {
+        padding: 2px;
+        font-size: 9px;
+    }
+    
+    /* Ensure backgrounds print */
+    .receipt-function-name {
+        background-color: #f5f5f5 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .receipt-entry-details td {
+        /* max-width removed to allow wrapping */
+        max-width: none;
+    }
+    
+    /* Prevent orphan elements */
+    .receipt-item-entry,
+    .receipt-total-row,
+    .receipt-footer {
+        page-break-inside: avoid;
+    }
+}
+
+/* Receipt in Modal */
+.modal-box .receipt-container {
+    max-height: 70vh;
+    overflow-y: auto;
+    box-shadow: none;
+    border: none;
+}
+
+/* Rupee Symbol */
+.rupee-symbol {
+    font-family: Arial, sans-serif;
+}
+
+/* Highlight circled items (like in image) */
+.receipt-highlight {
+    background: rgba(76, 175, 80, 0.2);
+    padding: 2px 5px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+/* Receipt Border for Print */
+.receipt-print-border {
+    border: 2px solid #333;
+    padding: 15px;
+    margin: 10px;
+}
+
+/* Barcode/QR placeholder */
+.receipt-code {
+    text-align: center;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+}
+
+.receipt-code-text {
+    font-size: 10px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Tamil Text Support */
+.receipt-tamil {
+    font-family: 'Noto Sans Tamil', 'Latha', sans-serif;
+}
+
+/* Function Name Display */
+.receipt-function-name {
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    margin: 8px 0;
+    padding: 6px;
+    background: #f5f5f5;
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+}
+
+/* Entry Details Table - Thermal Printer */
+.receipt-entry-details {
+    margin: 10px 0;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10px;
+}
+
+.receipt-entry-details th,
+.receipt-entry-details td {
+    padding: 4px 3px;
+    text-align: left;
+    border-bottom: 1px dotted #999;
+    font-size: 10px;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.receipt-entry-details th {
+    font-weight: bold;
+    background: none;
+    border-bottom: 1px solid #000;
+}
+
+.receipt-entry-details tr:last-child td {
+    border-bottom: 1px solid #000;
+}
+
+/* Compact Mode for Multiple Items */
+.receipt-compact .receipt-item {
+    padding: 4px 0;
+    font-size: 11px;
+}
+
+.receipt-compact .receipt-customer-row {
+    font-size: 11px;
+    margin: 3px 0;
+}
+
+/* Receipt Number Display */
+.receipt-number {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    margin: 8px 0;
+    padding: 5px;
+    background: #fff3cd;
+    border: 1px dashed #ff9800;
+}
+
+/* Status Badge */
+.receipt-status {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.receipt-status-paid {
+    background: #4caf50;
+    color: white;
+}
+
+.receipt-status-pending {
+    background: #ff9800;
+    color: white;
+}
+
+/* Notes Section */
+.receipt-notes {
+    margin: 15px 0;
+    padding: 10px;
+    background: #f9f9f9;
+    border-left: 3px solid #2196f3;
+    font-size: 11px;
+    color: #666;
+}
+
+.receipt-notes-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}

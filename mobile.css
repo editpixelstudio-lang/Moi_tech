@@ -1,0 +1,858 @@
+/**
+ * Mobile Responsive CSS - UZRS MOI Collection System
+ * Optimized for smartphones and tablets
+ */
+
+/* ============================================
+   MOBILE DEVICES (Portrait & Landscape)
+   ============================================ */
+
+@media (max-width: 768px) {
+    
+    /* Reset Body for Mobile */
+    body.dashboard-body {
+        font-size: 14px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    
+    /* Mobile Navbar - Compact */
+    .navbar {
+        padding: 0 8px;
+        height: auto;
+        min-height: 50px;
+        flex-wrap: wrap;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+        gap: 8px;
+        padding: 8px 0;
+    }
+    
+    .nav-brand h2 {
+        font-size: 16px;
+        text-align: center;
+    }
+    
+    .nav-user {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        width: 100%;
+    }
+    
+    .nav-user span {
+        width: 100%;
+        text-align: center;
+        font-size: 13px;
+    }
+    
+    .btn-dashboard, .btn-logout {
+        padding: 6px 14px;
+        font-size: 13px;
+    }
+    
+    /* Dashboard Container */
+    .dashboard-container {
+        height: auto;
+        overflow: visible;
+        padding: 0;
+    }
+    
+    .dashboard-content {
+        padding: 8px;
+        gap: 10px;
+        height: auto;
+    }
+    
+    /* Function Header - Mobile Friendly */
+    .function-header {
+        flex-direction: column;
+        padding: 12px;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .function-info h1 {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+    
+    .function-meta-inline {
+        display: block;
+        font-size: 12px;
+        margin-top: 6px;
+    }
+    
+    .function-header .btn-secondary {
+        padding: 8px 16px;
+        font-size: 13px;
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    /* Collection Form Container */
+    .collection-form-container {
+        padding: 0;
+        gap: 10px;
+    }
+    
+    #collectionForm {
+        padding: 12px;
+        gap: 10px;
+    }
+    
+    /* Mobile Input Grid - Stack Vertically */
+    .input-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        grid-template-columns: 1fr !important;
+    }
+    
+    .field-group {
+        grid-column: span 1 !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    
+    .field-group label {
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 6px;
+    }
+    
+    .input-field {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        height: 48px;
+        border-radius: 6px;
+        border: 2px solid #ccc;
+    }
+    
+    .input-field:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+    }
+    
+    /* Inline Fields - Stack on Mobile */
+    .field-group-inline {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        grid-template-columns: 1fr !important;
+        align-items: stretch !important;
+    }
+    
+    .field-group-inline label {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+    
+    .field-group-inline > div,
+    .field-group-inline > input {
+        width: 100% !important;
+        position: relative;
+    }
+    
+    /* Amount Field - Prominent on Mobile */
+    #amount {
+        font-size: 32px;
+        height: 70px;
+        font-weight: 900;
+        color: #d32f2f;
+        text-align: center;
+        border: 3px solid #d32f2f;
+        border-radius: 8px;
+    }
+    
+    /* Calculation Section - Stack Vertically */
+    .calculation-section {
+        flex-direction: column;
+        padding: 12px;
+        gap: 12px;
+        align-items: stretch;
+    }
+    
+    .denominations {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+        width: 100%;
+    }
+    
+    .denom-item {
+        gap: 4px;
+    }
+    
+    .denom-item label {
+        font-size: 11px;
+    }
+    
+    .denom-input {
+        width: 100%;
+        height: 36px;
+        font-size: 14px;
+    }
+    
+    .totals-display {
+        flex-direction: column;
+        gap: 8px;
+        padding: 12px;
+    }
+    
+    .row-total, .grand-total, .final-total {
+        font-size: 18px;
+        text-align: center;
+    }
+    
+    /* Action Buttons - Mobile Friendly */
+    .action-btns {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .btn-export,
+    .btn-save,
+    .btn-add,
+    .btn-update,
+    .btn-cancel-edit {
+        width: 100%;
+        padding: 14px 16px;
+        font-size: 15px;
+        height: auto;
+        border-radius: 6px;
+    }
+    
+    /* Message Styles */
+    .message {
+        padding: 12px;
+        font-size: 14px;
+        margin-top: 12px;
+    }
+    
+    /* Edit Mode Indicator */
+    .edit-mode-indicator {
+        padding: 12px 20px;
+        font-size: 15px;
+        margin-top: 12px;
+    }
+    
+    /* Collections Table - Mobile Optimized */
+    .collections-table {
+        margin-top: 12px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 6px;
+    }
+    
+    .collections-table table {
+        font-size: 13px;
+        min-width: 100%;
+    }
+    
+    .collections-table th {
+        padding: 10px 6px;
+        font-size: 12px;
+        white-space: nowrap;
+        position: sticky;
+        top: 0;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .collections-table td {
+        padding: 10px 6px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+    
+    /* Horizontal Scroll Hint */
+    .collections-table::after {
+        content: '← Swipe to see more →';
+        display: block;
+        text-align: center;
+        padding: 8px;
+        background: #f0f0f0;
+        color: #666;
+        font-size: 12px;
+        font-style: italic;
+        border-top: 1px solid #ddd;
+    }
+    
+    /* Recent Collections - Mobile */
+    .recent-collections {
+        margin-top: 12px;
+        max-height: none;
+        padding: 12px;
+    }
+    
+    .recent-collections h2 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+    
+    .recent-list {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 10px;
+    }
+    
+    .recent-item {
+        padding: 10px;
+    }
+    
+    .recent-info strong {
+        font-size: 14px;
+    }
+    
+    .recent-value {
+        font-size: 20px;
+    }
+    
+    /* Modal Styles - Mobile Optimized */
+    .modal-overlay {
+        padding: 10px;
+        align-items: flex-start;
+        overflow-y: auto;
+    }
+    
+    .modal-box {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 20px auto;
+        max-height: calc(100vh - 40px);
+        overflow-y: auto;
+    }
+    
+    .modal-header {
+        padding: 14px 16px;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+    
+    .modal-header h2 {
+        font-size: 16px;
+    }
+    
+    .modal-close {
+        font-size: 28px;
+    }
+    
+    .modal-body {
+        padding: 16px;
+        max-height: calc(100vh - 200px);
+        overflow-y: auto;
+    }
+    
+    .modal-footer {
+        padding: 12px 16px;
+        position: sticky;
+        bottom: 0;
+        background: white;
+        border-top: 2px solid #eee;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    
+    .btn-cancel,
+    .btn-confirm {
+        padding: 12px 20px;
+        font-size: 15px;
+        flex: 1;
+        min-width: 120px;
+    }
+    
+    /* Denomination Modal - Mobile */
+    .denom-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+    
+    .denom-row {
+        padding: 10px 12px;
+        gap: 12px;
+    }
+    
+    .denom-row label {
+        width: 60px;
+        font-size: 16px;
+    }
+    
+    .denom-row input {
+        flex: 1;
+        height: 40px;
+        font-size: 16px;
+        padding: 8px;
+        text-align: center;
+    }
+    
+    .total-summary {
+        flex-direction: column;
+        gap: 12px;
+        padding: 14px;
+        font-size: 15px;
+    }
+    
+    .total-summary span {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .total-summary span span {
+        font-size: 20px;
+        margin-top: 0;
+    }
+    
+    /* Edit Collection Modal - Mobile */
+    #editCollectionModal .modal-box {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    #editCollectionModal .input-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+    
+    #editCollectionModal .input-grid > .field-group {
+        width: 100% !important;
+        display: block !important;
+        margin: 0 !important;
+    }
+    
+    #editCollectionModal .field-group-inline {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 14px !important;
+        grid-template-columns: 1fr !important;
+    }
+    
+    #editCollectionModal .field-group-inline > div {
+        width: 100%;
+    }
+    
+    #editCollectionModal .input-field {
+        padding: 12px;
+        font-size: 16px;
+        height: 48px;
+    }
+    
+    #editCollectionModal .edit-meta-info {
+        font-size: 13px;
+        padding-top: 12px;
+    }
+    
+    /* Keyboard Help Modal - Mobile */
+    #keyboardHelpModal .modal-box {
+        max-width: 100% !important;
+    }
+    
+    .shortcut-section {
+        margin-bottom: 20px;
+    }
+    
+    .shortcut-section h3 {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+    
+    .shortcut-list {
+        gap: 8px;
+    }
+    
+    .shortcut-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px;
+        gap: 8px;
+    }
+    
+    .shortcut-item kbd {
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+    
+    .shortcut-item span {
+        margin-left: 0;
+        font-size: 14px;
+    }
+    
+    /* Autocomplete Dropdown - Mobile */
+    .autocomplete-dropdown {
+        max-height: 200px;
+        border-width: 2px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+    
+    .autocomplete-item {
+        padding: 14px 12px;
+        font-size: 15px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    /* Invoice Modal - Mobile */
+    #invoiceModal .modal-box {
+        max-width: 100% !important;
+    }
+    
+    .invoice-container {
+        padding: 16px;
+        font-size: 14px;
+    }
+    
+    .invoice-header {
+        margin-bottom: 16px;
+        padding-bottom: 8px;
+    }
+    
+    .invoice-items th,
+    .invoice-items td {
+        padding: 8px 4px;
+        font-size: 13px;
+    }
+    
+    .invoice-total {
+        font-size: 16px;
+        padding-top: 8px;
+    }
+    
+    /* Scrollbar - Mobile */
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: #999;
+        border-radius: 3px;
+    }
+    
+    /* Touch Feedback */
+    .btn:active,
+    button:active,
+    .autocomplete-item:active,
+    .recent-item:active {
+        opacity: 0.7;
+        transform: scale(0.98);
+    }
+}
+
+/* ============================================
+   SMALL MOBILE DEVICES (320px - 480px)
+   ============================================ */
+
+@media (max-width: 480px) {
+    
+    body.dashboard-body {
+        font-size: 13px;
+    }
+    
+    .navbar {
+        height: auto;
+    }
+    
+    .nav-brand h2 {
+        font-size: 14px;
+    }
+    
+    .function-header {
+        padding: 10px;
+    }
+    
+    .function-info h1 {
+        font-size: 14px;
+    }
+    
+    .function-meta-inline {
+        font-size: 11px;
+    }
+    
+    #collectionForm {
+        padding: 10px;
+    }
+    
+    .input-field {
+        padding: 10px;
+        font-size: 15px;
+        height: 44px;
+    }
+    
+    .field-group label {
+        font-size: 13px;
+    }
+    
+    #amount {
+        font-size: 28px;
+        height: 60px;
+    }
+    
+    .collections-table th {
+        padding: 8px 4px;
+        font-size: 11px;
+    }
+    
+    .collections-table td {
+        padding: 8px 4px;
+        font-size: 12px;
+    }
+    
+    .recent-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .denominations {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .denom-item label {
+        font-size: 10px;
+    }
+    
+    .denom-input {
+        height: 32px;
+        font-size: 13px;
+    }
+}
+
+/* ============================================
+   TABLET DEVICES (768px - 1024px)
+   ============================================ */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    
+    .input-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 10px;
+    }
+    
+    .field-group:nth-child(1) { grid-column: span 1; }
+    .field-group:nth-child(2) { grid-column: span 1; }
+    .field-group:nth-child(3) { grid-column: span 1; }
+    .field-group:nth-child(4) { grid-column: span 1; }
+    .field-group:nth-child(5) { grid-column: span 2; }
+    .field-group:nth-child(6) { grid-column: span 3; }
+    
+    .field-group-inline {
+        grid-template-columns: repeat(2, auto 1fr) !important;
+        gap: 10px;
+    }
+    
+    .collections-table {
+        overflow-x: auto;
+    }
+    
+    .collections-table table {
+        font-size: 14px;
+    }
+    
+    .recent-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .action-btns {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .btn-export,
+    .btn-save,
+    .btn-add,
+    .btn-update,
+    .btn-cancel-edit {
+        flex: 1;
+        min-width: 120px;
+    }
+}
+
+/* ============================================
+   LANDSCAPE ORIENTATION (Mobile)
+   ============================================ */
+
+@media (max-width: 768px) and (orientation: landscape) {
+    
+    .dashboard-container {
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .nav-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .nav-user span {
+        width: auto;
+    }
+    
+    .function-header {
+        flex-direction: row;
+        text-align: left;
+    }
+    
+    .input-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px;
+    }
+    
+    .field-group:nth-child(6) {
+        grid-column: span 2;
+    }
+    
+    .action-btns {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .btn-export,
+    .btn-save,
+    .btn-add,
+    .btn-update,
+    .btn-cancel-edit {
+        flex: 1;
+        min-width: 100px;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+    
+    .navbar,
+    .function-header .btn-secondary,
+    .action-btns,
+    .edit-mode-indicator,
+    .modal-close {
+        display: none !important;
+    }
+    
+    .dashboard-container {
+        height: auto;
+    }
+    
+    .collections-table {
+        border: 1px solid #000;
+    }
+    
+    .collections-table table {
+        font-size: 12px;
+    }
+    
+    .collections-table th,
+    .collections-table td {
+        border: 1px solid #000;
+        padding: 8px 4px;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY IMPROVEMENTS
+   ============================================ */
+
+/* Focus Visible for Keyboard Navigation */
+*:focus-visible {
+    outline: 3px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .input-field {
+        border-width: 3px;
+    }
+    
+    .btn {
+        border: 2px solid currentColor;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Dark Mode Support (Optional) */
+@media (prefers-color-scheme: dark) {
+    /* Uncomment if you want to support dark mode
+    body.dashboard-body {
+        background: #1a1a1a;
+        color: #f0f0f0;
+    }
+    
+    .input-field {
+        background: #2a2a2a;
+        color: #f0f0f0;
+        border-color: #444;
+    }
+    
+    .modal-box,
+    #collectionForm {
+        background: #2a2a2a;
+    }
+    */
+}
+
+/* ============================================
+   UTILITY CLASSES FOR MOBILE
+   ============================================ */
+
+.mobile-only {
+    display: none;
+}
+
+.desktop-only {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .mobile-only {
+        display: block;
+    }
+    
+    .desktop-only {
+        display: none;
+    }
+}
+
+/* Full Width Container on Mobile */
+.mobile-full-width {
+    width: 100%;
+}
+
+/* Text Size Adjustments */
+.mobile-text-sm {
+    font-size: 13px;
+}
+
+.mobile-text-md {
+    font-size: 15px;
+}
+
+.mobile-text-lg {
+    font-size: 18px;
+}
+
+/* Spacing Utilities */
+.mobile-mt-1 { margin-top: 8px; }
+.mobile-mt-2 { margin-top: 16px; }
+.mobile-mb-1 { margin-bottom: 8px; }
+.mobile-mb-2 { margin-bottom: 16px; }
+.mobile-p-1 { padding: 8px; }
+.mobile-p-2 { padding: 16px; }
