@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Refer-VBproj", "Refer-VBproj", "{2B0950CB-74EE-22DF-017F-33D5C11FF1D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UzrsInventory.CSharp", "Refer-VBproj\UzrsInventory.CSharp\UzrsInventory.CSharp.csproj", "{8E5F027C-A696-9536-371F-C69DF138E046}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E5F027C-A696-9536-371F-C69DF138E046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E5F027C-A696-9536-371F-C69DF138E046}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E5F027C-A696-9536-371F-C69DF138E046}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E5F027C-A696-9536-371F-C69DF138E046}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8E5F027C-A696-9536-371F-C69DF138E046} = {2B0950CB-74EE-22DF-017F-33D5C11FF1D9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E9C1F780-E1DD-49FB-8EA7-7AC98A5EF187}
+	EndGlobalSection
+EndGlobal

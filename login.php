@@ -1,43 +1,122 @@
-<!DOCTYPE html>
-<html lang="ta">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>உள்நுழைய - UZRS மொய் வசூல்</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/mobile.css">
-</head>
-<body>
-    <div class="container">
-        <div class="auth-card">
-            <div class="auth-header">
-                <h1>UZRS மொய் வசூல்</h1>
-                <h2>உங்கள் கணக்கில் உள்நுழையவும்</h2>
-            </div>
+<?php
+session_start();
 
-            <form id="loginForm" class="auth-form">
-                <div class="form-group">
-                    <label for="phone">கைபேசி எண்</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
+/**
+ * Login API
+ * UZRS MOI Collection System
+ */
 
-                <div class="form-group">
-                    <label for="password">கடவுச்சொல்</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
+// Disable error display to prevent HTML in JSON response
+ini_set('display_errors', 0);
+error_reporting(E_ALL);
 
-                <div id="message" class="message"></div>
+header('Content-Type: application/json');
+require_once '../includes/session.php';
+require_once '../config/database.php';
+require_once '../includes/functions.php';
 
-                <button type="submit" class="btn btn-primary">உள்நுழைய</button>
-            </form>
+// Only accept POST requests
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    echo json_encode([
+        'success' => false,
+        'message' => 'தவறான கோரிக்கை முறை'
+    ]);
+    exit();
+}
 
-            <div class="auth-footer">
-                <p>கணக்கு இல்லையா? <a href="signup.php">இங்கே பதிவு செய்யவும்</a></p>
-            </div>
-        </div>
-    </div>
+// Get POST data
+$data = json_decode(file_get_contents('php://input'), true);
 
-    <script src="js/main.js"></script>
-    <script src="js/login.js"></script>
-</body>
-</html>
+$phone = isset($data['phone']) ? sanitizeInput($data['phone']) : '';
+$password = isset($data['password']) ? $data['password'] : '';
+
+// Validation
+if (empty($phone) || empty($password)) {
+    echo json_encode([
+        'success' => false,
+        'message' => 'கைபேசி எண் மற்றும் கடவுச்சொல் தேவை'
+    ]);
+    exit();
+}
+
+if (!validatePhone($phone)) {
+    echo json_encode([
+        'success' => false,
+        'message' => 'தவறான கைபேசி எண் வடிவம்'
+    ]);
+    exit();
+}
+
+// Check credentials
+$conn = getDBConnection();
+
+$stmt = $conn->prepare("SELECT id, full_name, email, phone, password, role, is_active FROM users WHERE phone = ?");
+
+if (!$stmt) {
+    echo json_encode([
+        'success' => false,
+        'message' => 'Database prepare error: ' . $conn->error
+    ]);
+    closeDBConnection($conn);
+    exit();
+}
+
+$stmt->bind_param("s", $phone);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows === 0) {
+    echo json_encode([
+        'success' => false,
+        'message' => 'தவறான கைபேசி எண் அல்லது கடவுச்சொல்'
+    ]);
+    $stmt->close();
+    closeDBConnection($conn);
+    exit();
+}
+
+$user = $result->fetch_assoc();
+$stmt->close();
+// Connection kept open for potential updates
+
+// Check if user is active
+if (!$user['is_active']) {
+    echo json_encode([
+        'success' => false,
+        'message' => 'உங்கள் கணக்கு செயலில் இல்லை. நிர்வாகியை தொடர்பு கொள்ளவும்'
+    ]);
+    closeDBConnection($conn);
+    exit();
+}
+
+// Verify password
+if (!verifyPassword($password, $user['password'])) {
+    echo json_encode([
+        'success' => false,
+        'message' => 'தவறான கைபேசி எண் அல்லது கடவுச்சொல்'
+    ]);
+    closeDBConnection($conn);
+    exit();
+}
+
+closeDBConnection($conn);
+
+// Set session
+$_SESSION['user_id'] = $user['id'];
+$_SESSION['user_name'] = $user['full_name'];
+$_SESSION['user_email'] = $user['email'];
+$_SESSION['user_phone'] = $user['phone'];
+$_SESSION['user_role'] = $user['role'];
+
+echo json_encode([
+    'success' => true,
+    'message' => 'உள்நுழைவு வெற்றிகரமாக உள்ளது!',
+    'user' => [
+        'id' => $user['id'],
+        'name' => $user['full_name'],
+        'email' => $user['email'],
+        'phone' => $user['phone'],
+        'role' => $user['role']
+    ]
+]);
+?>

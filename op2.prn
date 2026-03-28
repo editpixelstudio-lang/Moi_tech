@@ -1,0 +1,26 @@
+I8,A
+q812
+O
+JF
+ZT
+Q200,25
+N
+A724,184,2,c,1,1,N,"Trend Makers"
+A790,140,2,f,1,1,N,"lblItemName"
+b437,50,Q,m2,s4,eL,"A1B2C3D4"
+A527,43,2,f,1,1,N,"A1B2C3D4"
+A790,76,2,f,1,1,N,"MRP : "
+A790,44,2,g,1,1,N,"TM Rs : lblTMRs"
+A790,107,2,f,1,1,N,"Size : lblSize"
+A709,76,2,f,1,1,N,"lblMRP"
+LO632,63,77,2
+A318,184,2,c,1,1,N,"Trend Makers"
+A384,140,2,f,1,1,N,"lblItemName"
+b31,50,Q,m2,s4,eL,"A1B2C3D4"
+A121,43,2,f,1,1,N,"A1B2C3D4"
+A384,76,2,f,1,1,N,"MRP : "
+A384,44,2,g,1,1,N,"TM Rs : lblTMRs"
+A384,107,2,f,1,1,N,"Size : lblSize"
+A303,76,2,f,1,1,N,"lblMRP"
+LO226,63,77,2
+P1

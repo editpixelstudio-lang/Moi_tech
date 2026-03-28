@@ -1,0 +1,52 @@
+═══════════════════════════════════════════════════════════════════
+  UZRS INVENTORY DESKTOP - BUILD INFORMATION
+═══════════════════════════════════════════════════════════════════
+
+BUILD DATE: 2026-01-19 22:22:54 IST
+
+EXECUTABLE LOCATION:
+  C:\wamp64\www\uzrs_moi\MoiWindows\Refer-VBproj\UzrsInventory.CSharp\bin\Release\net8.0-windows\UzrsInventoryDesktop.exe
+
+FILE SIZE: 68.69 MB
+
+BUILD TYPE: Self-Contained, Single-File Executable
+
+FEATURES:
+  ✓ Includes .NET 8.0 Runtime (No separate installation needed!)
+  ✓ Self-contained deployment
+  ✓ Single file executable
+  ✓ Native libraries included
+  ✓ Compressed for optimal size
+
+RECENT UPDATES:
+  ✓ Enhanced Denomination Summary Print Design
+  ✓ Now matches Payment Receipt professional layout
+  ✓ Logo support (sivan_logo.jpg)
+  ✓ Professional header with business info
+  ✓ Phone numbers: 81247 11714, 87784 54746, 82207 97816
+  ✓ Place name: மயிலாடும்பாறை
+  ✓ Tamil thank you message: தங்கள் வருகைக்கு நன்றி !!!
+
+SYSTEM REQUIREMENTS:
+  • Windows 7 SP1 or later (64-bit)
+  • Thermal printer for receipts
+  • No .NET Runtime installation required!
+
+HOW TO RUN:
+  1. Double-click UzrsInventoryDesktop.exe
+  2. Application will load the web interface
+  3. Use for collection entry and printing
+
+TROUBLESHOOTING:
+  • If Windows shows "Windows protected your PC", click "More info" then "Run anyway"
+  • Make sure your thermal printer is configured
+  • Logo file should be in: Properties\sivan_logo.jpg or same folder as exe
+
+BUILD COMMAND USED:
+  dotnet publish --configuration Release --runtime win-x64 --self-contained true 
+  -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true 
+  -p:EnableCompressionInSingleFile=true
+
+═══════════════════════════════════════════════════════════════════
+For support: info@sivanmoi.tech | Phone: 8122711712, 8124644746
+═══════════════════════════════════════════════════════════════════
